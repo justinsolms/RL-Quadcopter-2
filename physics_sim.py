@@ -66,7 +66,7 @@ class PhysicsSim():
         return body_velocity
 
     def get_linear_drag(self):
-        linear_drag = 0.5 * self.rho * self.find_body_velocity()**2 * self.areas * self.C_d
+        linear_drag = 0.5 * self.rho * self.find_body_velocity() * np.abs(self.find_body_velocity()) * self.areas * self.C_d
         return linear_drag
 
     def get_linear_forces(self, thrusts):
